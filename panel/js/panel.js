@@ -5,7 +5,7 @@ var missPointTeam1 = 0;
 var missPointTeam2 = 0;
 
 	function start_game(){	
-		play_sound('ff_open');
+		play_sound('ff_open.mp3');
 		document.getElementById("buttonStart").disabled = true;
 			
 		var counter = 33;
@@ -17,7 +17,6 @@ var missPointTeam2 = 0;
 			}
 			if (counter < 0) {
 				clearInterval(interval);
-				game.document.getElementById("idcLogo").style.width = '15%';
 				game.document.getElementById("counter").innerHTML = "BaÅŸlayalÄ±m";
 				game.document.getElementById("counter").style.display = "none";	
 				game.document.body.setAttribute("style", "background: linear-gradient(to bottom, #a7cfdf -50%, #580e12 100%);");
@@ -31,7 +30,7 @@ var missPointTeam2 = 0;
 	
 	function finish_game(){
 		game.document.getElementById("idcLogo").style.width = '50%';
-		game.document.getElementById("welcomePageInfo").innerHTML = "Teşekkürler.";
+		game.document.getElementById("welcomePageInfo").innerHTML = "Welcome";
 		game.document.getElementById("welcomePageInfo").style.display = "";
 	}
 	
@@ -67,7 +66,7 @@ var missPointTeam2 = 0;
 	}
 	
 	function pause_sound() {
-		var audio = new Audio('');
+		var audio = new Audio();
 		audio.play();
 	}
 	
@@ -104,7 +103,7 @@ var missPointTeam2 = 0;
 			document.getElementById("misspoint2").innerHTML = missPointTeam2;
 		}	
 		printMissPoint();
-		play_sound('ff-strike');
+		play_sound('ff-strike.wav');
 	}
 	
 	function nextQuestion(){
@@ -126,7 +125,7 @@ var missPointTeam2 = 0;
 			game.document.getElementById("awardTeam2").click();
 		}
 		
-	play_sound('ff_dogru');
+	play_sound('ff_dogru.mp3');
 	}
 	
 	function GetQuestion(questionParam){
@@ -150,7 +149,7 @@ var missPointTeam2 = 0;
 				var tempBgColor = this.style.backgroundColor;
 				if(tempBgColor == ""){
 					this.setAttribute("style", "background-color: lightgreen;");
-					play_sound('ff-clang');
+					play_sound('ff-clang.wav');
 				}
 				else if(tempBgColor == "lightgreen"){
 					this.setAttribute("style", "background-color: ;");
